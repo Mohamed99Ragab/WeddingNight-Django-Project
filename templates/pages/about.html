@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %} 
+
+    <!-- Modal -->
+    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="w-100 pt-1 mb-5 text-right">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="" method="get" class="modal-content modal-body border-0 p-0">
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
+                    <button type="submit" class="input-group-text bg-success text-light">
+                        <i class="fa fa-fw fa-search text-white"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Start Banner -->
+    <section class="bg-success py-5">
+        <div class="container">
+            <div class="row align-items-center py-5">
+                <div class="col-md-8 text-white">
+                    <h1>{{about.heading_hero}}</h1>
+                    <p>
+                        {{about.title_hero}}
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <img src="{{about.photo_about.url}}" alt="About Hero" style="max-width: 85%;  
+                    height: auto; border-radius: 20px;">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Close Banner -->
+
+
+
+ <!-- Start Section -->
+ <section class="container py-5">
+    <div class="row text-center pt-5 pb-3">
+        <div class="col-lg-6 m-auto">
+            <h1 class="h1">Our Services</h1>
+            <p>
+                You can book a wedding hall, make-up and session
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        {% for card in Services %}
+        <div class="col-md-6 col-lg-4 pb-5">
+            <a href="{{card.service_url.url}}"><div class="h-100 py-5 services-icon-wap shadow">
+                <div class="h1 text-success text-center"><img src="{{card.photo_services.url}}" alt="" class="oimg"></div></a>
+                <h2 class="h5 mt-4 text-center">{{card.service}}</h2>
+            </div></a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+<!-- End Section -->
+
+
+
+
+
+
+
+
+
+
+
+ <!-- Start Section -->
+ <section class="container py-5">
+    <div class="row pt-5 pb-3">
+        <div class="col-lg-9 m-auto">
+            <h1 class="h1">What is wedding.net?</h1>
+            <p>
+                Wedding.net is your first and last guide in Egypt that specializes in 
+                organizing wedding arrangements from the moment you set the date of joy 
+                to the celebration, we are visited by thousands of those who are about 
+                to get married like you because we have gained the confidence of many of 
+                them in their distinctive number of services in the Arab world, we put it 
+                now in your hands wherever you are in Egypt .
+            </p>
+            <p>
+                And because our goal is that the task of wedding preparations be very fun, 
+                fast and easy, we save you the trouble of moving and spending time in traffic 
+                jams and visiting every hall, photographer, salon, shop and watching the required 
+                service and we ask you to relax and sit down to browse all you want from wedding 
+                flowers and wedding cars through Wedding.net, where you communicate directly and 
+                for free with service providers by filling out the communication form to get answers, 
+                offers, and prices in one step and from your place!
+            </p>
+        </div>
+    </div>
+
+  
+
+    <div class="col-lg-9 m-auto">
+        <h1 class="h1">How does wedding.net help you?</h1>
+        <p>
+            We have a special and integrated section for each of the wedding services that we mentioned earlier.
+        </p>
+        <p>
+            In each section we show lists of service providers but they are not any companies because we only choose the best for you.
+            When browsing every service provider, you will find contact details, information that enables you to communicate with them 
+            directly, free and easy.We also take minutes of your time to read a set of ideas that wedding.net editors translate into 
+            articles that provide you with the knowledge you need during your journey in search of a specific service provider.
+            And because we all love photos, just like you, we have dedicated photo albums at Wedding.net in two stages. The first is 
+            for each service provider on its page, showing you a simple sample of its many works, and the second is the albums page for 
+            each of the wedding services departments.
+        </p>
+    </div>
+    
+</section>
+
+{% endblock %}
+

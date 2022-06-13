@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %} 
+
+   
+    <!-- Modal -->
+    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="w-100 pt-1 mb-5 text-right">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="" method="get" class="modal-content modal-body border-0 p-0">
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
+                    <button type="submit" class="input-group-text bg-success text-light">
+                        <i class="fa fa-fw fa-search text-white"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <!-- Start Content -->
+    <div class="container py-5">
+        <div class="row">
+
+            <div class="col-lg-3">
+                <h1 class="h2 pb-4">Categories</h1>
+                <ul class="list-unstyled templatemo-accordion">
+                    <li class="pb-3">
+                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
+                            City
+                            <i class="fa fa-fw fa-chevron-circle-down mt-1"></i>
+                        </a>
+                        <ul class="collapse show list-unstyled pl-3">
+                            <li><a class="text-decoration-none" href="#">Cairo</a></li>
+                            <li><a class="text-decoration-none" href="#">Fauyom</a></li>
+                        </ul>
+                    </li>
+                    <li class="pb-3">
+                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
+                            Type
+                            <i class="pull-right fa fa-fw fa-chevron-circle-down mt-1"></i>
+                        </a>
+                        <ul id="collapseTwo" class="collapse list-unstyled pl-3">
+                            <li><a class="text-decoration-none" href="#">Wedding</a></li>
+                            <li><a class="text-decoration-none" href="#">Party</a></li>
+                        </ul>
+                    </li>
+                    <li class="pb-3">
+                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
+                            Price
+                            <i class="pull-right fa fa-fw fa-chevron-circle-down mt-1"></i>
+                        </a>
+                        <ul id="collapseThree" class="collapse list-unstyled pl-3">
+                            <li><a class="text-decoration-none" href="#">Max</a></li>
+                            <li><a class="text-decoration-none" href="#">Mediam</a></li>
+                            <li><a class="text-decoration-none" href="#">Min</a></li>
+                        </ul>
+                    </li>
+                    <li class="pb-3">
+                        <br><br>
+                        <div class="list-inline-item">
+                            <a class="h3 text-dark text-decoration-none mr-3" href="#">
+                                <h3 class="h3">Bridal makeup and hairstyles in Egypt</h3>
+                            </a>
+                        </div>
+                        <br>
+                        <p>
+                            Every bride wants the most beautiful bridal hairstyles and bridal makeup for her upcoming wedding, so she searches for the best makeup artist that understands her taste and shows her the most beautiful look, and through Wedding.net you will find your request.
+                        </p>
+                    </li>
+                    <li class="pb-3">
+                        <br><br>
+                        <h4 class="h4"> How do I get perfect makeup on my wedding day</h4>                      
+                        <p>
+                            Your hairdresser, which you chose to decorate your look on the wedding day, will make every effort to make your look as you wish and more, but a beautiful look is not limited to doing hairdressing and beautiful makeup is not only by applying cosmetics on the wedding day, but it is the result of a skin that looks moist and has clear care, so Taking care of the skin before the wedding is one of the most important factors that help the hairdresser to show his best on your appearance. We advise you to keep your skin moist and conduct care sessions for it well before the wedding, avoid direct exposure to the sun, drink water well and follow a healthy diet, this is what guarantees your skin luster and beauty. .
+                        </p>
+                        <p>
+                            We also want to advise you to stay away from exaggerating the application of cosmetics, as simplicity and mediation by using these materials will show you the look you desire without exaggeration and cost and without overburdening your skin with many chemicals and preparations.
+                        </p>
+                        <p>
+                            And be confident that you are beautiful with all the looks, your inner beauty and the happiness that you are in will be reflected outside without the need to cost, so enjoy this day and be its queen by all standards.
+                        </p>
+
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-9">
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="list-inline shop-top-menu pb-3 pt-1">
+                            <li class="list-inline-item">
+                                <a class="h3 text-dark text-decoration-none mr-3" href="#">All</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="h3 text-dark text-decoration-none mr-3" href="#">Halls in</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="h3 text-dark text-decoration-none" href="#">Eygpt</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 pb-4">
+                        <div class="d-flex">
+                            <select class="form-control">
+                                <option>Featured</option>
+                                <option>A to Z</option>
+                                <option>Item</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    {% for card in makeups %}
+                    <div class="col-md-4">
+                        <div class="card mb-4 product-wap rounded-0">
+                            <div class="card rounded-0">
+                                <img class="card-img rounded-0 img-fluid img" src="{{card.photo_makeup.url}}">
+                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                    <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white" href="#"><i class="far fa-heart"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="{% url 'links:single-makeup' card.id %}"><i class="far fa-eye"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="{% url 'links:single-makeup' card.id %}"><i class="fa fa-envelope"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="{% url 'links:single-makeup' card.id %}" class="h3 text-decoration-none">{{card.name}}</a>
+                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                                    <li class="pt-2">
+                                        <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled d-flex justify-content-center mb-1">
+                                    <li>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled d-flex justify-content-center mb-1">
+                                    <li class="text-muted text-right">LE{{card.price}}</li>
+                                </ul>  
+                            </div>
+                        </div>
+                    </div>
+                    
+                   {% endfor %} 
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- End Content -->
+
+ 
+{% endblock %}
